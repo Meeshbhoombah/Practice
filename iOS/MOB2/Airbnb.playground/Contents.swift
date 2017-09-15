@@ -21,7 +21,7 @@ let session = URLSession.shared
 let downloadTask = session.dataTask(with: request) { (data, response, error) in
     if let data = data {
         let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-        print(json)
+        print(json!)
     }
 }
 
