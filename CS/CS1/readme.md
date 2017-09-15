@@ -1,4 +1,7 @@
-# Roulette
+# CS1: Programming Fundamentals
+
+## Roulette in the Terminal
+roulette.py
 
 ## Outlining the Game
 1. Take bet
