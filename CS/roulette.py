@@ -20,12 +20,14 @@ def take_bet(color, number, amount):
     bet_amount = amount
 
 def roll_ball():
-    random.randint(0, 38)
+    '''returns a random number between 0 and 37'''
+    number_rolled  =  random.randint(0, 38)
     pass
 
 def check_results():
     '''Compares bet_color to color rolled.  Compares
     bet_number to number_rolled.'''
+    
     pass
 
 def payout():
