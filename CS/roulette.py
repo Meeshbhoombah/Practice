@@ -20,7 +20,7 @@ def take_bet(color, number, amount):
     bet_amount = amount
 
 def roll_ball():
-    '''returns a random number between 0 and 37'''
+    random.randint(0, 38)
     pass
 
 def check_results():
