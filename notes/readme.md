@@ -1,4 +1,0 @@
-# Notes 
-
-## Computer Science
-
