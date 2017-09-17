@@ -6,6 +6,7 @@ import random
 random.seed(1)
 
 bank_account = 1000
+bankrupt = False
 bet_amount = 0
 bet_color = None
 bet_number = None
@@ -43,6 +44,10 @@ def check_results(number_rolled, color, number, amount):
     else
         results.append("false")
 
+    results.append(amount)
+
+    return results
+
 def payout():
     '''returns total amount won or lost by user based on results of roll. '''
     
@@ -71,8 +76,8 @@ def play_game():
         amount = raw_input("Bet amount (At least 10 with a limit of %s") % (bank_account)
         
         take_bet(color, number, amount)
-        check_results(roll_ball(), color, number, amount)
+        results = check_results(roll_ball(), color, number, amount)
         
-        print(payout())
+        print(payout(results))
         
         
