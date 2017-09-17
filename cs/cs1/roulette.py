@@ -28,10 +28,10 @@ def check_results(number_rolled, color, number, amount):
     '''Compares bet_color to color rolled.  Compares
     bet_number to number_rolled.'''
     if number == number_rolled
-        results = ["true"]
+        
     else
         results = ["false"]
-
+    
     if number_rolled in red
         color_rolled == "red"
     else if number_rolled in green
@@ -48,9 +48,9 @@ def check_results(number_rolled, color, number, amount):
 
     return results
 
-def payout():
+def payout(results)
     '''returns total amount won or lost by user based on results of roll. '''
-    
+     
     pass
 
 def play_game():
@@ -66,11 +66,11 @@ def play_game():
     Welcome to roulette. You have $%s in your bank account.
     Please make a bet to get started.
 
-    A bet consists of a color, number, and amount.\n 
-    """
+    A bet consists of a color, number, and amount.
+    """ & bank_account
     print intro 
     
-    while(!bankrupt):
+    while(!bankrupt and !end_game):
         color = raw_input("Bet color (green/red/black): ")
         number  = raw_input("Bet number (0-37): ")
         amount = raw_input("Bet amount (At least 10 with a limit of %s") % (bank_account)
@@ -80,4 +80,8 @@ def play_game():
         
         print(payout(results))
         
-        
+        next_round = raw_input("Another round (y/n)? ")
+        if next_round == "y"
+            pass
+        else 
+            end_game == True   
