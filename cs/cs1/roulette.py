@@ -50,7 +50,17 @@ def play_game():
 
     A bet consists of a color, number, and amount.\n 
     """
+    print intro 
+    
+    while(!lost):
     color = raw_input("Bet color (green/red/black): ")
-    number = raw_input("Bet number (0-37): ")
-    amount = raw_input("Bet amount (At least 10/%s") % (bank_account)
+    number  = raw_input("Bet number (0-37): ")
+    amount = raw_input("Bet amount (At least 10 with a limit of %s") % (bank_account)
+    
+    take_bet(color, number, amount)
+    check_results(roll_ball())
+    
+
+    
+    
     pass
