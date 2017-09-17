@@ -23,16 +23,29 @@ def roll_ball():
     '''returns a random number between 0 and 37'''
     return random.randint(0, 38)
 
-def check_results(number_rolled):
+def check_results(number_rolled, color, number, amount):
     '''Compares bet_color to color rolled.  Compares
     bet_number to number_rolled.'''
-    if number_rolled in green
-    else if number_rolled in red
+    if number == number_rolled
+        results = ["true"]
     else
-        return  
+        results = ["false"]
+
+    if number_rolled in red
+        color_rolled == "red"
+    else if number_rolled in green
+        color_rolled == "green"
+    else
+        color_rolled == "black"
+
+    if color == color_rolled
+        results.append("true")
+    else
+        results.append("false")
 
 def payout():
     '''returns total amount won or lost by user based on results of roll. '''
+    
     pass
 
 def play_game():
@@ -52,15 +65,14 @@ def play_game():
     """
     print intro 
     
-    while(!lost):
-    color = raw_input("Bet color (green/red/black): ")
-    number  = raw_input("Bet number (0-37): ")
-    amount = raw_input("Bet amount (At least 10 with a limit of %s") % (bank_account)
-    
-    take_bet(color, number, amount)
-    check_results(roll_ball())
-    
-
-    
-    
-    pass
+    while(!bankrupt):
+        color = raw_input("Bet color (green/red/black): ")
+        number  = raw_input("Bet number (0-37): ")
+        amount = raw_input("Bet amount (At least 10 with a limit of %s") % (bank_account)
+        
+        take_bet(color, number, amount)
+        check_results(roll_ball(), color, number, amount)
+        
+        print(payout())
+        
+        
