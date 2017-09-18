@@ -26,6 +26,15 @@ def roll_ball():
 def check_results(number_rolled, color, number, amount):
     # Compares bet_color to color rolled. Compares
     # bet_number to number_rolled. Returns payout for bet.
+    if number == number_rolled:
+        payout = 2 * amount
+    
+    if number_rolled in red:
+        if color == "red":
+            payout == amount / 2
+    else if number_rolled != 0:
+        if color == "black"
+        
     return payout
 
 def play_game():
@@ -42,25 +51,34 @@ def play_game():
 
     Make a bet between $1 and $1000 and select a number between
     0 and 37 to bet on.
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     """ % bank_account
     print intro 
     
     while(!bankrupt and !end_game):
-        number  = raw_input("Bet number (0-37): ")
+        switcher = raw_input("Choose between a bet on (C)olor or (N)umber")
+        
+        if switcher == "C": 
+            bet = raw_input("Bet color (green/red/black):  ")
+        else
+            bet = int(raw_input("Bet number (0-37): "))
+        
         amount = raw_input("Bet amount (At least 10 with a limit of %s") % (bank_account)
         
-        take_bet(color, number, amount)
-        results = check_results(roll_ball(), color, number, amount)
+        results = check_results(roll_ball(), bet, amount)
         
-        print(results)
+        if results < 0:
+            print "You made $" + results ". Congratulations!"
+        else:
+            print "You lost $" + results ". Unfortunate. You lost!"
         
-        next_round = raw_input("Another round (y/n)? ")
-        if next_round == "y"
+        next_round = raw_input("You now have %s. Another round (y/n)? ") %s bank_account
+        if next_round == "y":
             roundNumber +=
             pass
-        else 
+        else:
             end_game = True
             break
 
-    print "Thanks for playing. You ended with $%s after %s rounds" % (bank_account, roundNumber)   
+    print "Thanks for playing. You ended with $%s after %s rounds" % (bank_account, roundNumber)
+
+play_game()
