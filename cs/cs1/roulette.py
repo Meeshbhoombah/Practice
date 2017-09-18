@@ -32,8 +32,13 @@ def check_results(number_rolled, color, number, amount):
     if number_rolled in red:
         if color == "red":
             payout == amount / 2
-    else if number_rolled != 0:
-        if color == "black"
+    elif number_rolled != 0:
+        if color == "black":
+            payout == amount / 2
+    elif color == "green":
+        payout == amount / 2
+    else
+        payout = 0
         
     return payout
 
