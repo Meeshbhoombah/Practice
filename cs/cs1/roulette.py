@@ -44,7 +44,7 @@ def check_results(number_rolled, bet, amount):
             payout == amount / 2
             return payout
         else:
-            payout = 0
+            payout = bank_account - payout
             return payout
 
 def play_game():
@@ -57,7 +57,7 @@ def play_game():
     Pay or deduct money from the user accordingly.
     """
     bank_account = 1000 
-    roundNumber = 0
+    roundNumber = 1
     payout = 0 
     end_game = False
 
@@ -85,10 +85,10 @@ def play_game():
         winnings = check_results(roll_ball(), bet, amount)
         if winnings > 0:
             print("You made ${}. Congratulations!".format(winnings))
-            bank_account = bank_account + winnings
+            bank_account = winnings
         else:
             print("You lost ${}. Unfortunate. You lost!".format(winnings))
-            bank_account = bank_account - winnings
+            bank_account = winnings
         
         next_round = input("You now have ${}. Another round (y/n)? ".format(bank_account))
         if next_round == "y":
@@ -97,6 +97,6 @@ def play_game():
             end_game = True
             break
 
-    print ("Thanks for playing. You ended with ${} after {} rounds".format(bank_account, roundNumber))
+    print ("Thanks for playing. You ended with ${} after {} round(s)".format(bank_account, roundNumber))
 
 play_game()
