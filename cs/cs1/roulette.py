@@ -5,8 +5,6 @@ feel free to build a full command line interface through which '''
 import random
 random.seed(1)
 
-end_game = False
-
 bank_account = 1000
 bankrupt = False
 
@@ -22,26 +20,32 @@ def roll_ball():
     # returns a random number between 0 - 37
     return random.randint(0, 38)
 
-def check_results(number_rolled, color, number, amount):
+def check_results(number_rolled, bet, amount):
     # Compares bet_color to color rolled. Compares
     # bet_number to number_rolled. Returns payout for bet.
-    if number == number_rolled:
-        payout = 2 * amount
     
-    # Checks if number_rolled is in a color and if that
-    # color matches the user's bet
-    if number_rolled in red:
-        if color == "red":
-            payout == amount / 2
-    elif number_rolled != 0:
-        if color == "black":
-            payout == amount / 2
-    elif color == "green":
-        payout == amount / 2
+    if (type(bet) is int):
+        if bet == number_rolled:
+            payout = 2 * amount
+            return payout
+        else:
+            payout = bank_account - amount
+            return payout
     else:
-        payout = 0
-        
-    return payout
+        if number_rolled in red:
+            if bet == "red":
+                payout == amount / 2
+                return payout
+        elif number_rolled != 0:
+            if bet == "black":
+                payout == amount / 2
+                return payout
+        elif bet == "green":
+            payout == amount / 2
+            return payout
+        else:
+            payout = 0
+            return payout
 
 def play_game():
     """This is the main function for the game.
@@ -52,43 +56,47 @@ def play_game():
     Determine if the user won or lost.
     Pay or deduct money from the user accordingly.
     """
+    bank_account = 1000 
+    roundNumber = 0
+    payout = 0 
+    end_game = False
+
     intro = """
     Welcome to roulette. You have $%s in your bank account.
 
     Make a bet between $1 and $1000 and select a number between
     0 and 37 to bet on.
     """ % bank_account
-    print intro
-
-    end_game = False 
-    
+    print(intro) 
+     
     while(not bankrupt and not end_game):
-        switcher = raw_input("Choose between a bet on (C)olor or (N)umber: ")
+        switcher = input("Choose between a bet on (C)olor or (N)umber: ")
         
         if switcher == "C" or switcher == "c": 
-            bet = raw_input("Bet color (green/red/black):  ")
+            bet = int(input("Bet color (green/red/black):  "))
         elif switcher == "N" or switcher == "n":
-            bet = int(raw_input("Bet number (0-37): "))
+            bet = int(input("Bet number (0-37): "))
         else:
-            print "Please choose either C or N"
-            switcher = raw_input("Choose between a bet on (C)olor or (N)umber: ")
+            print("Please choose either C or N")
+            switcher = input("Choose between a bet on (C)olor or (N)umber: ")
         
-        amount = raw_input("Bet amount (At least 10 with a limit of %s) ") % bank_account
+        amount = int(input("Bet amount (At least 10 with a limit of {}) ".format(bank_account)))
         
-        results = check_results(roll_ball(), bet, amount)
-        if results < 0:
-            print "You made $" + results + ". Congratulations!"
+        winnings = check_results(roll_ball(), bet, amount)
+        if winnings > 0:
+            print("You made ${}. Congratulations!".format(winnings))
+            bank_account = bank_account + winnings
         else:
-            print "You lost $" + results + ". Unfortunate. You lost!"
+            print("You lost ${}. Unfortunate. You lost!".format(winnings))
+            bank_account = bank_account - winnings
         
-        next_round = raw_input("You now have %s. Another round (y/n)? ") % bank_account
+        next_round = input("You now have ${}. Another round (y/n)? ".format(bank_account))
         if next_round == "y":
             roundNumber += 1
-            pass
         else:
             end_game = True
             break
 
-    print "Thanks for playing. You ended with $%s after %s rounds" % (bank_account, roundNumber)
+    print ("Thanks for playing. You ended with ${} after {} rounds".format(bank_account, roundNumber))
 
 play_game()
