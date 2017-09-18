@@ -37,7 +37,7 @@ def check_results(number_rolled, color, number, amount):
             payout == amount / 2
     elif color == "green":
         payout == amount / 2
-    else
+    else:
         payout = 0
         
     return payout
@@ -59,7 +59,7 @@ def play_game():
     """ % bank_account
     print intro 
     
-    while(!bankrupt and !end_game):
+    while(not bankrupt and not end_game):
         switcher = raw_input("Choose between a bet on (C)olor or (N)umber")
         
         if switcher == "C": 
