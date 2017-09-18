@@ -5,7 +5,6 @@ feel free to build a full command line interface through which '''
 import random
 random.seed(1)
 
-game_over = False
 end_game = False
 
 bank_account = 1000
@@ -29,6 +28,8 @@ def check_results(number_rolled, color, number, amount):
     if number == number_rolled:
         payout = 2 * amount
     
+    # Checks if number_rolled is in a color and if that
+    # color matches the user's bet
     if number_rolled in red:
         if color == "red":
             payout == amount / 2
@@ -57,28 +58,32 @@ def play_game():
     Make a bet between $1 and $1000 and select a number between
     0 and 37 to bet on.
     """ % bank_account
-    print intro 
+    print intro
+
+    end_game = False 
     
     while(not bankrupt and not end_game):
-        switcher = raw_input("Choose between a bet on (C)olor or (N)umber")
+        switcher = raw_input("Choose between a bet on (C)olor or (N)umber: ")
         
-        if switcher == "C": 
+        if switcher == "C" or switcher == "c": 
             bet = raw_input("Bet color (green/red/black):  ")
-        else
+        elif switcher == "N" or switcher == "n":
             bet = int(raw_input("Bet number (0-37): "))
+        else:
+            print "Please choose either C or N"
+            switcher = raw_input("Choose between a bet on (C)olor or (N)umber: ")
         
-        amount = raw_input("Bet amount (At least 10 with a limit of %s") % (bank_account)
+        amount = raw_input("Bet amount (At least 10 with a limit of %s) ") % bank_account
         
         results = check_results(roll_ball(), bet, amount)
-        
         if results < 0:
-            print "You made $" + results ". Congratulations!"
+            print "You made $" + results + ". Congratulations!"
         else:
-            print "You lost $" + results ". Unfortunate. You lost!"
+            print "You lost $" + results + ". Unfortunate. You lost!"
         
-        next_round = raw_input("You now have %s. Another round (y/n)? ") %s bank_account
+        next_round = raw_input("You now have %s. Another round (y/n)? ") % bank_account
         if next_round == "y":
-            roundNumber +=
+            roundNumber += 1
             pass
         else:
             end_game = True
