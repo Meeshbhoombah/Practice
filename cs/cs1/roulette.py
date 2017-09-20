@@ -5,9 +5,6 @@ feel free to build a full command line interface through which '''
 import random
 random.seed(1)
 
-bank_account = 1000
-bankrupt = False
-
 bet_amount = 0
 bet_color = None
 bet_number = None
@@ -20,33 +17,6 @@ def roll_ball():
     # returns a random number between 0 - 37
     return random.randint(0, 38)
 
-def check_results(number_rolled, bet, amount):
-    # Compares bet_color to color rolled. Compares
-    # bet_number to number_rolled. Returns payout for bet.
-    
-    if (type(bet) is int):
-        if bet == number_rolled:
-            payout = 2 * amount
-            return payout
-        else:
-            payout = bank_account - amount
-            return payout
-    else:
-        if number_rolled in red:
-            if bet == "red":
-                payout == amount / 2
-                return payout
-        elif number_rolled != 0:
-            if bet == "black":
-                payout == amount / 2
-                return payout
-        elif bet == "green":
-            payout == amount / 2
-            return payout
-        else:
-            payout = bank_account - payout
-            return payout
-
 def play_game():
     """This is the main function for the game.
     When this function is called, one full iteration of roulette,
@@ -56,9 +26,10 @@ def play_game():
     Determine if the user won or lost.
     Pay or deduct money from the user accordingly.
     """
-    bank_account = 1000 
+    bank_account = 1000
+    bankrupt = False
+ 
     roundNumber = 1
-    payout = 0 
     end_game = False
 
     intro = """
@@ -82,7 +53,7 @@ def play_game():
         
         amount = int(input("Bet amount (At least 10 with a limit of {}) ".format(bank_account)))
         
-        winnings = check_results(roll_ball(), bet, amount)
+        check_results(roll_ball(), bet, amount)
         if winnings > 0:
             print("You made ${}. Congratulations!".format(winnings))
             bank_account = winnings
@@ -98,5 +69,26 @@ def play_game():
             break
 
     print ("Thanks for playing. You ended with ${} after {} round(s)".format(bank_account, roundNumber))
+
+def check_results(number_rolled, bet, amount):
+    # Compares bet_color to color rolled. Compares
+    # bet_number to number_rolled. Returns payout for bet.
+    
+    if (type(bet) is int):
+        if bet == number_rolled:
+            bank_account  = 2 * amount + bank_account
+        else:
+            bank_account = bank_account - amount
+    else:
+        if number_rolled in red:
+            if bet == "red":
+                bank_account = amount / 2 + bank_account
+        elif number_rolled != 0:
+            if bet == "black":
+                bank_account = amount / 2 + bank_account
+        elif bet == "green":
+            bank_account = amount / 2 + bank_account
+        else:
+            bank_account = bank_account - amount
 
 play_game()

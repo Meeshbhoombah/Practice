@@ -1,18 +1,6 @@
-# CS1: Programming Fundamentals
+# Computer Science 1: Programming Fundamentals
+Table of Contents
+- Roulette.py
 
-## Roulette in the Terminal
-roulette.py
-
-### Outlining the Game
-1. Take bet
-	- Color
-	- Number
-2. "Spin the wheel"
-3. Check result
-	- Pay them out if won
-	- Take money if lost
-
-### Writing the Program
-- Functions should do one thing only
-	- DRY = "Don't Repeat Yourself"
-
+## Roulette.py
+First, I had to modify 
