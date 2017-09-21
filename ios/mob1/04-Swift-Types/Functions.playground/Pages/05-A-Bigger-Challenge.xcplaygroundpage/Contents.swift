@@ -12,7 +12,20 @@
  Feel free to reference the previous page if you need some help!
 
  */
+func drawBigSquare() {
+    
+    for _ in 0..<4 {
+        moveFifty()
+        rotateNinety()
+        moveFifty()
+        rotateNinety()
+        moveFifty()
+        rotateNinety()
+        moveFifty()
+    }
+}
 
+drawBigSquare()
 
 
 

@@ -23,13 +23,6 @@
  */
 
 
-
-
-
-
-
-
-
 /*:
 
  ## Calling functions with more than one parameter

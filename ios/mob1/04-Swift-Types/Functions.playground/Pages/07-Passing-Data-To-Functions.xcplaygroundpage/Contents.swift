@@ -56,8 +56,13 @@
  */
 
 func drawSquare(sideLength: Int) {
-
+    for _ in 0..<4 {
+        move(steps: sideLength)
+        rotate(degrees: 90)
+    }
 }
+
+drawSquare(sideLength: 75)
 
 /*:
 
@@ -67,16 +72,19 @@ func drawSquare(sideLength: Int) {
 
  */
 
+func drawPolygon (sideLength: Int, numberOfSides: Int) {
+    for _ in 0..<numberOfSides {
+        move(steps: sideLength)
+        rotate(degrees: 360 / numberOfSides)
+    }
+}
 
-
-
-
-
-
-
-
-
-
+drawPolygon(sideLength: 75, numberOfSides: 3)
+drawPolygon(sideLength: 75, numberOfSides: 4)
+drawPolygon(sideLength: 75, numberOfSides: 5)
+drawPolygon(sideLength: 75, numberOfSides: 6)
+drawPolygon(sideLength: 75, numberOfSides: 7)
+drawPolygon(sideLength: 75, numberOfSides: 8)
 
 //: [Previous](@previous) | [Next](@next)
 

@@ -29,9 +29,8 @@ let lessThanEqualToExample = 0 <= 0
 let greaterThanEqualToExample = 1 >= 0
 //: - experiment: Try out some _boolean operators_ below!
 
-
-
-
+2 < 3
+4 > 5
 
 /*:
  

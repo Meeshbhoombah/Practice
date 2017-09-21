@@ -11,22 +11,31 @@
  */
 
 class Person {
-  let name: String
-  init(name: String) {
-    self.name = name
-  }
-}
-
-func myNameIs(name: String?) {
-    if name != nil {
-        print("My name is " + name!)
-    } else {
-        print("This is not a valid person object")
+    let name: String
+    init(name: String) {
+        self.name = name
     }
 }
 
-var maybePerson1:Person? = Person(name: "Rohan")
-var maybePerson2:Person? = nil
+func myNameIs(person: Person?) -> String {
+    if let person = person {
+        return "My name is \(person.name)"
+    } else {
+        return "Not valid person object."
+    }
+}
 
-myNameIs(name: maybePerson1?.name)
-myNameIs(name: maybePerson2?.name)
+func myNameIs2(person: Person?) -> String {
+    switch(person) {
+    case .none:
+        return "Not valid person object."
+    default:
+        return "My name is \(person!.name)"
+    }
+}
+
+let maybePerson1: Person? = Person(name: "Willie")
+let maybePerson2: Person? = nil
+
+print("Using optional binding:\n\nPerson1: \(myNameIs(person: maybePerson1))\nPerson2: \(myNameIs(person: maybePerson2))\n")
+print("Using pattern matching:\n\nPerson1: \(myNameIs2(person: maybePerson1))\nPerson2: \(myNameIs2(person: maybePerson2))\n")

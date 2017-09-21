@@ -23,7 +23,16 @@
 
  */
 
-
+func drawsmallerSquare() {
+    
+    moveFifty()
+    rotateNinety()
+    moveFifty()
+    rotateNinety()
+    moveFifty()
+    rotateNinety()
+    moveFifty()
+}
 
 /*:
 

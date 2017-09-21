@@ -79,7 +79,7 @@ secondRotation = 0
 
 */
 
-
+hourRotation = hours / 12 * 360
 
 /*:
 
@@ -95,7 +95,8 @@ secondRotation = 0
 
 */
 
-
+secondRotation = seconds / 60 * 360
+minuteRotation = minutes / 60 * 360
 
 /*:
 
