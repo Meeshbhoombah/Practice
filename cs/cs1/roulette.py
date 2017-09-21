@@ -1,94 +1,162 @@
-'''Build a working roulette game.  At minimum, this script should
-Complete one round of roulette - but if you're up to the challenge,
-feel free to build a full command line interface through which '''
-
 import random
-random.seed(1)
+import re
 
-bet_amount = 0
-bet_color = None
-bet_number = None
+bank_acount = 1000
+bet = {
+    "type": "none",
+    "amount": 0,
+    "number": 0
+}
 
-green = [0]
-red = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]
-black = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35]
+color = {
+    "green": [0, 37],
+    "red": [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36],
+    "black": [2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35]
+}
 
-def roll_ball():
-    # returns a random number between 0 - 37
-    return random.randint(0, 38)
+intro = True
+
+bankrupt = False
+end_game = False
+rounds = 1
+
+print('''
+     _ __           _           
+    ( /  )         //   _/__/_  
+     /--<  __ , , // _  /  /  _ 
+    /   \_(_)(_/_(/_(/_(__(__(/_
+                                   
+    (P)lay the Game *OR* (L)earn the rules
+
+    ''')
+
+while(intro):
+    user_action = input()
+    menuOption(user_action)
+
+def menuOption(option):
+    if user_action == "P" or "p":
+        intro = False
+        play_game()
+    elif user_action == "L" or "l":
+        intro = False
+        rules()
+    else:
+        print("Please enter (P) or (L)")
+
+def rules():
+    learned = False
+        
+    while not learned:
+        print('''
+        
+        Bets you can make:
+        - Odd, Even, Black, Red (1:1 payout)
+        - A single number (0 - 36 and 00)
+
+        Simple, right?
+        ''')
+    
+        game = input("Type continue to start game ")
+        if game.lower() == "continue":
+            learned = True
+        else:
+            pass
 
 def play_game():
-    """This is the main function for the game.
-    When this function is called, one full iteration of roulette,
-    including:
-    Take the user's bet.
-    Roll the ball.
-    Determine if the user won or lost.
-    Pay or deduct money from the user accordingly.
-    """
-    bank_account = 1000
-    bankrupt = False
- 
-    roundNumber = 1
-    end_game = False
+    while not bankrupt and not end_game:
 
-    intro = """
-    Welcome to roulette. You have $%s in your bank account.
+        bet_set = False
+        while not bet_set:
+            user_bet = input("Place your bet: ")
+            if  validateBet(user_input):
+                bet_set = True
+            else:
+                print("Not a valid bet.")
+                pass
+        
+        wager_set = False
+        while not wager_set:
+            user_wager = input("Place your wager: ")
+            if validateWager(user_wager):     
+                wager_set = True
+            else:
+                print("Not a valid wager.")
+                pass
 
-    Make a bet between $1 and $1000 and select a number between
-    0 and 37 to bet on.
-    """ % bank_account
-    print(intro) 
-     
-    while(not bankrupt and not end_game):
-        switcher = input("Choose between a bet on (C)olor or (N)umber: ")
-        
-        if switcher == "C" or switcher == "c": 
-            bet = int(input("Bet color (green/red/black):  "))
-        elif switcher == "N" or switcher == "n":
-            bet = int(input("Bet number (0-37): "))
+        house_roll = rollBall()
+        won = checkBet(house_roll)
+
+        if won == True:
+            userWon(bet, bank_account)
         else:
-            print("Please choose either C or N")
-            switcher = input("Choose between a bet on (C)olor or (N)umber: ")
-        
-        amount = int(input("Bet amount (At least 10 with a limit of {}) ".format(bank_account)))
-        
-        check_results(roll_ball(), bet, amount)
-        if winnings > 0:
-            print("You made ${}. Congratulations!".format(winnings))
-            bank_account = winnings
-        else:
-            print("You lost ${}. Unfortunate. You lost!".format(winnings))
-            bank_account = winnings
-        
-        next_round = input("You now have ${}. Another round (y/n)? ".format(bank_account))
-        if next_round == "y":
-            roundNumber += 1
+            userLost(bet, bank_account)
+
+        if bankrupt == True:
+            break
+            
+        another_round = input("Do you want to play another round? (Y/N) ")
+        if another_round == "Y" or "y":
+            rounds += 1
+            pass
         else:
             end_game = True
             break
 
-    print ("Thanks for playing. You ended with ${} after {} round(s)".format(bank_account, roundNumber))
-
-def check_results(number_rolled, bet, amount):
-    # Compares bet_color to color rolled. Compares
-    # bet_number to number_rolled. Returns payout for bet.
-    
-    if (type(bet) is int):
-        if bet == number_rolled:
-            bank_account  = 2 * amount + bank_account
-        else:
-            bank_account = bank_account - amount
+    if not bankrupt:
+        print("Thanks for playing! After {} rounds you ended with ${}".format(rounds, bank_account))
     else:
-        if number_rolled in red:
-            if bet == "red":
-                bank_account = amount / 2 + bank_account
-        elif number_rolled != 0:
-            if bet == "black":
-                bank_account = amount / 2 + bank_account
-        elif bet == "green":
-            bank_account = amount / 2 + bank_account
-        else:
-            bank_account = bank_account - amount
+        print("You ran outta money! We're comin' for ya. Good luck on the streets.")
 
-play_game()
+def validateBet(bet):
+    if bet.lower() == "odd" or "even" or "black" or "red":
+        bet["type"] == bet
+        return True
+    elif bet == "00":
+        bet["type"] = "single number"
+        bet["number"] = 37
+    elif any(char.isdigit() for char in bet):
+        bet["type"] == "single number"
+        bet["number"] == int(bet)
+        return True
+    else:
+        return False
+    
+def validateWager(wager):
+    try:
+        int(wage)
+        return True
+    except ValueError:
+        return False
+           
+def rollBall():
+    random.seed(1)
+    return random.randint(0, 38)
+
+def checkBet(roll):
+    if bet["number"] != 0 and bet == roll:
+        return True
+        bet["amount"] = bet["amount"] * 35
+    elif isinstance(bet, str):
+        if bet["type"] == "odd" and roll % 2 != 0:
+            return True
+        elif bet["type"] == "even" and roll % 2 == 0:
+            return True
+        elif bet["type"] == "red" and roll in color["red"]:
+            return True
+        elif bet["type"] == "black" and roll in color["black"]:
+            return True
+        elif bet["type"] == "single number" and roll == 37:
+            return True
+            bet["amount"] =  bet["amount"] * 35
+    else:
+        return False
+
+def userWon(user_bet, user_bank_account):
+    user_bank_account = bet["amount"] + user_bank_account
+    print("Nice win! Your bank account is now at ${}".format(user_bank_account))
+
+def userLost(user_bet, user_bank_account):
+    user_bank_account = user_bank_account - bet["amount"]
+    print("You lost! Your bank account is now at ${}".format(user_bank_account))
+
