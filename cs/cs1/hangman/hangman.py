@@ -100,6 +100,10 @@ class Game(object):
             incorrect_guesses_remaining -= 1
         
     def correct_guess(self, secret_word):
+        '''Check at which positions the user's guess is found in secret word
+        and create an array of those values. Iterate over that array and change
+        hint_li at those values to match the character the user guesses.
+        '''
         guess_found_at = [n for n in xrange(len(secret_word)) if secret_word.find(user_guess, n) == n]
         for i in len(char_found_at):
             hint_li[char_found_at[i]] = user_guess
