@@ -1,5 +1,7 @@
-# General
+# general
 .DS_Store
-node_modules
-config/secret
+*.pdf
+
+# vim
 *.swp
+
