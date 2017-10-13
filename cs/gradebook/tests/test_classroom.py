@@ -12,3 +12,9 @@ def create_new_classroom:
     assert bool(classroom.students)     == False
     assert bool(classroom.assignments)  == False
 
+def create_new_students:
+    student = Student(first_name: "John", last_name: "Micheal")
+    assert student.fullname        === "John Micheal"
+    assert bool(student.schedule)  == False
+    assert bool(student.classes)   == False
+
