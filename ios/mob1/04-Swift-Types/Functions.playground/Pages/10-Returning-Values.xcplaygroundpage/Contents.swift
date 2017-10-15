@@ -53,10 +53,13 @@ let twoPiRadiansInDegrees = radiansToDegrees(radians: 2 * Double.pi)
 
  */
 
+func degreesToRadians(_ degrees: Double) -> Double {
+    return 0.0174533 * degrees
+}
 
-
-
-
+let halfPi = degreesToRadians(halfPiRadiansInDegrees)
+let pi = degreesToRadians(piRadiansInDegrees)
+let twoPi = degreesToRadians(twoPiRadiansInDegrees)
 
 //let halfPi = degreesToRadians(degrees: halfPiRadiansInDegrees)
 //let pi = degreesToRadians(degrees: piRadiansInDegrees)
@@ -73,12 +76,11 @@ let twoPiRadiansInDegrees = radiansToDegrees(radians: 2 * Double.pi)
  */
 
 
+func calculateRotationForPolygon(numberOfSides: Int) -> Double {
+    return 360.0 / Double(numberOfSides);
+}
 
-
-
-
-
-
+var degreeForPentagon = calculateRotationForPolygon(numberOfSides: 5)
 
 //: - callout(Hint): Remember that you will need to _cast_ `sides` from an `Int` to a `Double`. Swift is very specific about types! You can _cast_ or convert it with `Double(sides)`.
 //:

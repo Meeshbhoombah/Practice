@@ -45,16 +45,17 @@
 
  */
 
+func createShapeWith(sideLength: Int, numberOfSides: Int) {
+    for _ in 0..<numberOfSides {
+        move(steps: sideLength)
+        rotate(degrees: 360 / numberOfSides)
+    }
+}
 
-
-
-
-
-
-
-
-
-
+createShapeWith(sideLength: 75, numberOfSides: 3)
+createShapeWith(sideLength: 75, numberOfSides: 4)
+createShapeWith(sideLength: 75, numberOfSides: 5)
+createShapeWith(sideLength: 75, numberOfSides: 6)
 
 /*:
 

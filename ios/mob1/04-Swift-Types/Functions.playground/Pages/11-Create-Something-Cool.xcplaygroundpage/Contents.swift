@@ -42,6 +42,17 @@
  
  */
 
+func drawPolygon (sideLength: Int, numberOfSides: Int) {
+    for _ in 0..<numberOfSides {
+        move(steps: sideLength)
+        rotate(degrees: -360 / numberOfSides)
+    }
+}
+
+for i in 3..<100 {
+    drawPolygon(sideLength: 20, numberOfSides: i)
+}
+
 
 
 

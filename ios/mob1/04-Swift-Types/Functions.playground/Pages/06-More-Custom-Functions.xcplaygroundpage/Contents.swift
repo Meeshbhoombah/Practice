@@ -18,7 +18,11 @@
 
 */
 
-
+move(steps: 75)
+rotate(degrees: 120)
+move(steps: 75)
+rotate(degrees: 120)
+move(steps: 75)
 
 /*:
 
@@ -48,7 +52,30 @@
  
 */
 
+func drawTriangle() {
+    for _ in 0..<3 {
+        move(steps: 75)
+        rotate(degrees: 120)
+    }
+}
 
+func drawPentagon() {
+    for _ in 0..<5 {
+        move(steps: 75)
+        rotate(degrees: 72)
+    }
+}
+
+func drawHexagon() {
+    for _ in 0..<6 {
+        move(steps: 75)
+        rotate(degrees: 60)
+    }
+}
+
+drawTriangle()
+drawPentagon()
+drawHexagon()
 
 
 

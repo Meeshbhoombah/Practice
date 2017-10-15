@@ -97,5 +97,52 @@ print("The course is a mobile course: \(isMobile)")
  
  */
 
+enum Week {
+    case sun
+    case mon
+    case tues
+    case wed
+    case thurs
+    case fri
+    case sat
+}
+
+func getWeekdayName(day: Week) -> String {
+    var result: String
+    
+    switch day {
+    case .sun:
+        result = "Sunday"
+    case .mon:
+        result = "Monday"
+    case .tues:
+        result = "Tuesday"
+    case .wed:
+        result = "Wednesday"
+    case .thurs:
+        result = "Thursday"
+    case .fri:
+        result = "Friday"
+    case .sat:
+        result = "Saturday"
+    default:
+        result = "Not a Weekday"
+    }
+    
+    return result
+}
+
+func finallyWeekend(checkDay: Week) -> String {
+    var result: String
+    
+    switch checkDay {
+    case .sat, .sun:
+        result = "WHUUUUUUU ITS THE WEEKEND."
+    default:
+        result = "\(getWeekdayName(day: checkDay)) is a normal workday"
+    }
+    
+    return result
+}
 
 //: [Next](@next)

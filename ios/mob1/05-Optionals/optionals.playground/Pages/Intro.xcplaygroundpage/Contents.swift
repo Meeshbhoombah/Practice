@@ -17,6 +17,11 @@ import Foundation
  If the box has nothing, we get *.none*
  */
 
+enum NilError: Error {
+    case nothing
+}
+
+
 // these two variable definitions are 100% equivalent
 let string1: Optional<String> = "hello"
 let string2: String? = "hello"
