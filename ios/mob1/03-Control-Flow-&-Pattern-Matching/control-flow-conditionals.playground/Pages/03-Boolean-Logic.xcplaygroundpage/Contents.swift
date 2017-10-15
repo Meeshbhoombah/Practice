@@ -59,10 +59,8 @@ func cruiseControl(currentSpeed: Int, distance: Int, previousDistance: Int) {
     // Fix this to implement a basic adaptive cruise control
     if distance < 10 {
         brake()
-    } else {
-        if currentSpeed < 60 {
-            accelerate()
-        }
+    } else if currentSpeed < 60 && previousDistance - distance < 0  {
+        accelerate()
     }
 }
 /*:

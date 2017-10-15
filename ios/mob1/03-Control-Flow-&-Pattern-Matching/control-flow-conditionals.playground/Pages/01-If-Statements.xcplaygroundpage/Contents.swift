@@ -27,11 +27,15 @@ let equalToStringExample = "test" == "test"
 let notEqualToExample = "boolean" != "random string"
 let lessThanEqualToExample = 0 <= 0
 let greaterThanEqualToExample = 1 >= 0
+
+let fart = 0 < 1
+let sadNoise = 0 > 1
+
 //: - experiment: Try out some _boolean operators_ below!
 
-
-
-
+if 0 < 1 {
+    print("KMS")
+}
 
 /*:
  
