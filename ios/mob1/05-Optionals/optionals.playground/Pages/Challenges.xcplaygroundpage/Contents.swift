@@ -11,11 +11,22 @@
  */
 
 class Person {
-  let name: String
+  var name: String
   init(name: String) {
     self.name = name
   }
 }
+
+func introduce(person: Person?) -> String {
+    guard let toBeIntroduced = person else { return "This is not a valid person object" }
+    return "My name is \(toBeIntroduced)."
+}
+
+let maybePersonOne = Person(name: "Rohan")
+let maybePersonTwo = Person(name: "Changing up the game")
+
+introduce(person: maybePersonOne)
+introduce(person: maybePersonTwo)
 
 
 

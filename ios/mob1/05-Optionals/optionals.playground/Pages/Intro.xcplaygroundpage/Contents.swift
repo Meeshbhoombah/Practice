@@ -108,11 +108,3 @@ var actualString4: String!
 */
 
 //: [Next - Challenges](@next)
-
-
-// Material below here is to help with this playground
-
-
-enum NilError: Error {
-    case nothing
-}
