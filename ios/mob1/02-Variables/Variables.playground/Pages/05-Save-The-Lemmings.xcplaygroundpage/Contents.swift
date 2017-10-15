@@ -20,7 +20,7 @@ var signText: String = "This is not a sign."
 
 */
 
-
+signText = "Rohan"
 
 /*:
 
@@ -36,7 +36,7 @@ var signText: String = "This is not a sign."
 
 */
 
-
+signText = "22"
 
 /*:
 
@@ -56,7 +56,7 @@ var signText: String = "This is not a sign."
 
 */
 
-
+signText = "Danger"
 
 /*:
 
@@ -86,7 +86,7 @@ var signText: String = "This is not a sign."
 
 */
 
-
+signText = "\"Danger\" zone"
 
 /*:
 

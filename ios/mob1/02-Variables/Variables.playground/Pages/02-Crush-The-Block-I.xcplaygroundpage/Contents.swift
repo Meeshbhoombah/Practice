@@ -23,7 +23,7 @@ var distanceFromLeft: Int = 50
 
 */
 
-
+distanceFromLeft = 160
 
 /*:
 
@@ -44,7 +44,7 @@ var distanceFromLeft: Int = 50
 
 */
 
-
+distanceFromLeft = 200
 
 /*:
 
@@ -56,7 +56,7 @@ var distanceFromLeft: Int = 50
 
 */
 
-
+distanceFromLeft = 260
 
 /*:
 
