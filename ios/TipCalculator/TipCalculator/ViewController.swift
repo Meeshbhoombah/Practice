@@ -17,7 +17,17 @@ class ViewController: UIViewController {
         case beautiful
     }
 
+    // Service Quality Buttons
+    @IBOutlet weak var poor: UIButton!
+    @IBOutlet weak var average: UIButton!
+    @IBOutlet weak var good: UIButton!
+    @IBOutlet weak var beautiful: UIButton!
+    
     @IBAction func resetCalculator(_ sender: Any) {
+        
+    }
+    
+    @IBAction func deleteText(_ sender: Any) {
         
     }
     

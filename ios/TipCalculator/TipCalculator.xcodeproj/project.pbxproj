@@ -13,7 +13,7 @@
 		1C02970C1F943091008CB623 /* TipCalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C02970A1F943091008CB623 /* TipCalculator.xcdatamodeld */; };
 		1C02970E1F943091008CB623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C02970D1F943091008CB623 /* Assets.xcassets */; };
 		1C0297111F943091008CB623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C02970F1F943091008CB623 /* LaunchScreen.storyboard */; };
-		1CC2D11F1F947A0D00F44893 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC2D11E1F947A0D00F44893 /* UIElements.swift */; };
+		1C5BACCE1F95569C00A1D19D /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BACCD1F95569C00A1D19D /* UIElements.swift */; };
 		35469C0BAA8632645D1CCC0F /* Pods_TipCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C493F32DB8306B5CB6CE8807 /* Pods_TipCalculator.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 		1C02970D1F943091008CB623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C0297101F943091008CB623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C0297121F943091008CB623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CC2D11E1F947A0D00F44893 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
+		1C5BACCD1F95569C00A1D19D /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
 		44A776D1537D6385F5B7C9FC /* Pods-TipCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipCalculator/Pods-TipCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		6C9F009A4F66700081A2E537 /* Pods-TipCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipCalculator/Pods-TipCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		C493F32DB8306B5CB6CE8807 /* Pods_TipCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,7 +67,7 @@
 			children = (
 				1C02970F1F943091008CB623 /* LaunchScreen.storyboard */,
 				1C0297071F943091008CB623 /* Main.storyboard */,
-				1CC2D11E1F947A0D00F44893 /* UIElements.swift */,
+				1C5BACCD1F95569C00A1D19D /* UIElements.swift */,
 				1C0297031F943091008CB623 /* AppDelegate.swift */,
 				1C0297051F943091008CB623 /* ViewController.swift */,
 				1C02970D1F943091008CB623 /* Assets.xcassets */,
@@ -219,7 +219,7 @@
 			files = (
 				1C02970C1F943091008CB623 /* TipCalculator.xcdatamodeld in Sources */,
 				1C0297061F943091008CB623 /* ViewController.swift in Sources */,
-				1CC2D11F1F947A0D00F44893 /* UIElements.swift in Sources */,
+				1C5BACCE1F95569C00A1D19D /* UIElements.swift in Sources */,
 				1C0297041F943091008CB623 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

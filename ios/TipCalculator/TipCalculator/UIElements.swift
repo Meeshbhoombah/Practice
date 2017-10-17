@@ -2,18 +2,14 @@
 //  UIElements.swift
 //  TipCalculator
 //
-//  Created by Rohan Mishra on 10/15/17.
+//  Created by Rohan Mishra on 10/16/17.
 //  Copyright © 2017 Augment. All rights reserved.
 //
 
 import Foundation
 import UIKit
+import PureLayout
 
-class UIElements {
-    
-    func divider(anchor: UIView) {
-        let line = UIView()
-        
-    }
-    
+class UIElements: UIView {
+    let divider = UIView()
 }
