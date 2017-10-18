@@ -16,7 +16,7 @@ As per the Product College Course Catalog:
 > major software architectures, major web development patterns and frameworks.
 
 ### Major Projects
-- [virus](https://github.com/Meeshbhoombah/makeschool/tree/master/cs/virus)
+- [herd-immunity](https://github.com/Meeshbhoombah/makeschool/tree/master/cs/herd_immunity)
 - [hangman](https://github.com/Meeshbhoombah/makeschool/tree/master/cs/hangman)
 
 ### Assignments
