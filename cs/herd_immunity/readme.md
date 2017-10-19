@@ -1,2 +1,1 @@
-# Virus
-
+# Herd Immunity Project
