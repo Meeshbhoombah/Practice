@@ -5,4 +5,26 @@ Mortality Rate: 0.7
 Basic Reproduction Rate: 0.25
 
 Healthy: 99990               Infected: 10              Dead: 0
-Healthy: 99920              Infected: 110             Dead: 80
+Healthy: 99810              Infected: 110             Dead: 80
+Healthy: 97989             Infected: 1169            Dead: 842
+Healthy: 80313            Infected: 11354           Dead: 8333
+Healthy: 31293            Infected: 38932          Dead: 29775
+Healthy: 21930            Infected: 40687          Dead: 37383
+Healthy: 19610            Infected: 40687          Dead: 39703
+Healthy: 18909            Infected: 40687          Dead: 40404
+Healthy: 18708            Infected: 40687          Dead: 40605
+Healthy: 18656            Infected: 40687          Dead: 40657
+Healthy: 18636            Infected: 40687          Dead: 40677
+Healthy: 18634            Infected: 40687          Dead: 40679
+Healthy: 18631            Infected: 40687          Dead: 40682
+Healthy: 18631            Infected: 40687          Dead: 40682
+Healthy: 18631            Infected: 40687          Dead: 40682
+Healthy: 18631            Infected: 40687          Dead: 40682
+Healthy: 18631            Infected: 40687          Dead: 40682
+Healthy: 18631            Infected: 40687          Dead: 40682
+Healthy: 18631            Infected: 40687          Dead: 40682
+Healthy: 18631            Infected: 40687          Dead: 40682
+Healthy: 18631            Infected: 40687          Dead: 40682
+Healthy: 18631            Infected: 40687          Dead: 40682
+Healthy: 18631            Infected: 40687          Dead: 40682
+Healthy: 18631            Infected: 40687          Dead: 40682

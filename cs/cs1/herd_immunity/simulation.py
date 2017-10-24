@@ -59,8 +59,8 @@ class Simulation:
         self.logger = Logger(self.virus_name, self.population, self.vaccinated,
                              self.mortality_rate, self.basic_repro_rate)
    
-        healthy = self.population - (self.infected + self.dead)
-        self.logger.log(healthy, self.infected, self.dead)
+        self.healthy = self.population - (self.infected + self.dead)
+        self.logger.log(self.healthy, self.infected, self.dead)
 
         self.current = 0
     
@@ -129,18 +129,24 @@ class Simulation:
                     if roll < self.basic_repro_rate:
                         self.population_li[person_index] = 2
                         self.infected += 1
+                        self.healthy -= 1
                     else:
                         pass
 
         for i in [i for i, x in enumerate(self.population_li) if x == 2]:
         # kill a sick person based on the mortality rate
             roll = uniform(0.0, 1.0)
+            
+            print('interaction')
+            print(len(self.population_li))
+            print(i)
            
             if roll < self.mortality_rate:
-                del self.population_li[i]
+                self.population_li[i] = 3
                 self.dead += 1
-
-        self.logger.log(len(self.population_li), self.infected, self.dead)
+                self.healthy -= 1
+        
+        self.logger.log(self.healthy, self.infected, self.dead)
 
         self.current += 1
     
