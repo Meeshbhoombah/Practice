@@ -38,3 +38,30 @@ By the end of this study, I will be able to:
     + Books:
         * Blockchain: Blueprint for a New Economy
         * The Business Blockchain
+
+## Projects
+- Mixer = a SMS and Facebook Messenger bot implemented in Golang
+    + Done:
+        - Send and recieve messages on both Facebook and SMS
+        - Compares and returns the correct data when prompted by users
+- N0TE = an opensource note taking/flash card app web app that compiles Python in the browser
+    + Done:
+        - Can add notesbooks or flashcard sets
+        - Can compile and run Python and supports syntax highlighting
+- daaank = a dashboard system on a private blockchain
+    + Done:
+        - Blockchain "works"
+        - Can record data to the Blockchain
+        - Can create visualizations based on Blockchain data
+
+## Weekly Plan (Oct 23 - Dec 4)
+- Week 1:
+    + Complete the Go Tour
+    + Finish the Little Go Book
+    + Complete 1 Challenge a day on Exercism.io
+- Week 2:
+    + Read the Go Standard Documentation
+    + Start and Finish Mixer
+    + Complete 1 Challenge a day on Execrcism.io
+
+
