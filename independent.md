@@ -19,3 +19,12 @@ By the end of this study, I will be able to:
 - Demonstrate a strong understanding of concurrency and error-handing
 - Build RESTful APIs and web apps in Go
 - Interact with popular Javascript libraries in Go
+- Understand the various developments in blockchain technology:
+    + Cryptocurrencies
+    + Smart contracts
+    + Economics and markets
+    + Science
+    + Genomics
+    + Health
+- Synthesize an understanding of the limitations of the Blockchain technology
+- Implement my own blockchain using `Geth`
