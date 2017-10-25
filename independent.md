@@ -27,4 +27,14 @@ By the end of this study, I will be able to:
     + Genomics
     + Health
 - Synthesize an understanding of the limitations of the Blockchain technology
-- Implement my own blockchain using `Geth`
+- Implement my own fork of the Etherum blockchain using `Geth`
+- Build a very basic blockchain from scratch to serve as a database
+
+## Resources
+- Learning Go
+    + [The Offical Google Wiki for Learning Go](https://github.com/golang/go/wiki/Learn)
+- Blockchain development
+    + [Battle Tested Etherum Dev Series](http://decypher.tv/series/ethereum-development)
+    + Books:
+        * Blockchain: Blueprint for a New Economy
+        * The Business Blockchain
