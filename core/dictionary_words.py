@@ -2,11 +2,11 @@
 """
 rearrange.py
 
-This scripts reaches into the local dictionary of words, the length of which is specefied by the
-user
+This scripts reaches into the local dictionary of words, and creates a sentence (the length of 
+which is specefied by the user)
 
 Attributes:
-    words (file object): A file containing the user's local dictionary of words
+    words (list): A list containing the user's local dictionary of words
 Example:
     $ python3 dictionary_words.py 3
     >> wuss paragrammatist avitaminosis.
