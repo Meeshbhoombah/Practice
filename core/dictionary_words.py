@@ -14,9 +14,11 @@ Example:
 
 import sys
 from random import randrange
+from time import time
 
 with open("/usr/share/dict/words", "r") as f:
     words = f.read()
+    
 
 def create_sentence(length):
     """ Creates a sentence given a length
@@ -27,17 +29,21 @@ def create_sentence(length):
     Returns:
         sentence (str): the generated sentence
     """
-    sentence = ""
+    start_time = time()
 
+    sentence = ""
+    lines = words.splitlines()
     for i in range(length):
-        lines = words.splitlines()
         line_number = randrange(0, len(lines))
         word = lines[line_number]
 
-        if i == length - 1:
-            sentence += (word + ".")
-        else:
-            sentence += (word + " ")
+        #if i == length - 1:
+        #    sentence += (word + ".")
+        #else:
+        #    sentence += (word + " ")
+
+    end_time = time() - start_time
+    print(end_time)
 
     return sentence
 
@@ -47,5 +53,5 @@ if __name__ == "__main__":
     sentence_length = int(user_args)
 
     sentence = create_sentence(sentence_length)
-    print(sentence)
+    #print(sentence)
 

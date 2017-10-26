@@ -1,19 +1,19 @@
 # -*- encoding: utf-8 -*-
 """ rearrange words
 
-This module rearranges words passed in by the user via the command line. After 
+this module rearranges words passed in by the user via the command line. after 
 creating a list of the user's arugments, the module randomly selects words and
 rearranges the order in which the words are in.
 
-Example:
-    Passing in random words as command-line arguments spits them out in a 
+example:
+    passing in random words as command-line arguments spits them out in a 
     random order as well::
     
         $ python3 rearrange.py house mouse spouse blouse
         >> spouse house mouse blouse
 
-.. _Source:
-    https://github.com/Meeshbhoombah/makeschool/CS2
+.. _source:
+    https://github.com/meeshbhoombah/makeschool/cs2
 """
 import sys
 from random import shuffle
