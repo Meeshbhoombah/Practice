@@ -13,7 +13,7 @@ Example:
 """
 
 import sys
-import random
+from random import randrange
 
 with open("/usr/share/dict/words", "r") as f:
     words = f.read()
@@ -31,7 +31,7 @@ def create_sentence(length):
 
     for i in range(length):
         lines = words.splitlines()
-        line_number = random.randrange(0, len(lines))
+        line_number = randrange(0, len(lines))
         word = lines[line_number]
 
         if i == length - 1:
