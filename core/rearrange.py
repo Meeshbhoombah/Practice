@@ -13,7 +13,7 @@ Example:
         >> spouse house mouse blouse
 
 .. _Source:
-    https://github.com/Meeshbhoombah/makeschool/tree/master/cs/cs2/rearrange
+    https://github.com/Meeshbhoombah/makeschool/CS2
 """
 import sys
 from random import shuffle
