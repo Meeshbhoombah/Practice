@@ -27,8 +27,5 @@ def rearrange_input(rearrange):
 if __name__ == "__main__":
     user_args = sys.argv[1:]
     rearranged = rearrange_input(user_args)
-    if rearranged = None:
-        print("Empty")
-    else:
-        print(rearranged)
+    print(rearranged)
 
