@@ -68,15 +68,15 @@ if __name__ == "__main__":
     #words = words.split()
     words = ["one", "fish", "two", "fish", "red", "fish", "blue", "fish"]
     
-    """ histogram """
+    """ HISTOGRAM """
     histogram = analyzer.histogram(words)
     print("Histogram: " + str(histogram))
 
-    """ unique words """
+    """ UNIQUE WORDS """
     unique_words = analyzer.unique_words(histogram)
     print("Unique words: " + str(unique_words))
 
-    """ frequency of a single word """
+    """ FREQUENCY """
     word = "fish"
     # word = "gangja"
     frequency = analyzer.frequency(word, histogram)
