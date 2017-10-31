@@ -44,10 +44,6 @@ By the end of this study, I will be able to:
     + Done:
         - Send and recieve messages on both Facebook and SMS
         - Compares and returns the correct data when prompted by users
-- N0TE = an opensource note taking/flash card app web app that compiles Python in the browser
-    + Done:
-        - Can add notesbooks or flashcard sets
-        - Can compile and run Python and supports syntax highlighting
 - daaank = a dashboard system on a private blockchain
     + Done:
         - Blockchain "works"
@@ -63,5 +59,6 @@ By the end of this study, I will be able to:
     + Read the Go Standard Documentation
     + Start and Finish Mixer
     + Complete 1 Challenge a day on Execrcism.io
+- Week 3:
 
 
