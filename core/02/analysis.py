@@ -1,6 +1,9 @@
 # -*- encoding: utf-8 -*-
-"""
+""" analysis.py
 
+Takes a source_text (which has been read in and broken down into a list of words) and
+can output a histogram of the frequency of word occurance, all the unique words in
+the text, or the number of times a singular word appears in the source text.
 """
 import re
 

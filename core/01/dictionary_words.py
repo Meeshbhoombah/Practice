@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
-rearrange.py
+dictionary_words.py
 
 This scripts reaches into the local dictionary of words, and creates a sentence (the length of 
 which is specefied by the user)
@@ -15,13 +15,12 @@ Example:
 import sys
 from random import randrange
 from time import time
-
+    
 with open("/usr/share/dict/words", "r") as f:
     words = f.read()
     
-
 def create_sentence(length):
-    """ Creates a sentence given a length
+    """ Creates a sentence given a length from the user's dictionary
 
     Args:
         length (int): the length of the string as specefied by the user 
@@ -37,10 +36,11 @@ def create_sentence(length):
         line_number = randrange(0, len(lines))
         word = lines[line_number]
 
-        #if i == length - 1:
-        #    sentence += (word + ".")
-        #else:
-        #    sentence += (word + " ")
+        # Grammar correct
+        if i == length - 1:
+            sentence += (word + ".")
+        else:
+            sentence += (word + " ")
 
     end_time = time() - start_time
     print(end_time)
@@ -53,5 +53,5 @@ if __name__ == "__main__":
     sentence_length = int(user_args)
 
     sentence = create_sentence(sentence_length)
-    #print(sentence)
+    print(sentence)
 
