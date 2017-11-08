@@ -44,11 +44,18 @@ By the end of this study, I will be able to:
     + Done:
         - Send and recieve messages on both Facebook and SMS
         - Compares and returns the correct data when prompted by users
+<<<<<<< HEAD
 - daaank = a dashboard system on a private blockchain
     + Done:
         - Blockchain "works"
         - Can record data to the Blockchain
         - Can create visualizations based on Blockchain data
+=======
+- YouTube Videos: daily videos summarizing what I've covered that day for the independent study
+    + Done:
+        - A series on the basics of Go
+        - Partially through the Blockchain series
+>>>>>>> a33461296663b57e15672945f3f5d6f9b552df75
 
 ## Weekly Plan (Oct 23 - Dec 4)
 - Week 1:
