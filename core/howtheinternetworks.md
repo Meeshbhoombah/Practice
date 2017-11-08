@@ -2,7 +2,7 @@
 
 ## Jargon List
 - **DNS** (Domain Name System):
-  Acts as a translator, takes a domain -> IP Address (Internet Address book)
+    Acts as a translator, takes a domain -> IP Address (Internet Address book)
 - **Domain**: 
   (google.com // 24.192.67.31)
 - Server: remote software, gives and recieves data
