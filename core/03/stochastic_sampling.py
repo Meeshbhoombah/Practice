@@ -13,7 +13,7 @@ Example:
             ('were', 0.0013280212483399733) ... ]
 
 Attributes:
-
+    words (list): a list of all the 
 """
 from random import randrange
 from decimal import *
@@ -53,7 +53,6 @@ def weighted_frequency():
     for i in range(len(frequency)):
         weighted = [(word, (word_frequency / len(words))) for word, word_frequency in frequency]
         
-    print(frequency)
     return weighted
 
 def log():
