@@ -14,4 +14,15 @@
   + Hypertext = text with features
     * Created by CERN and Tim Burnsley
   + Protocol = agreed set of rules for communication
+- URI/URL
+- (S)FTP
+- Packet
+- Socket
+- API
+- Port
+- Sandbox
+- IP v4/v6
+- IP Address
+- ISP
+- UDP
 
