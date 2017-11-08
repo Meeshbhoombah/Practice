@@ -64,12 +64,13 @@ class Analyzer:
  
     
 if __name__ == "__main__":
+    """ MODULE SET UP """
     analyzer = Analyzer()
     with open('gangja.txt', 'r') as f:
         words = f.read()
     
-    #words = words.split()
-    words = ["one", "fish", "two", "fish", "red", "fish", "blue", "fish"]
+    words = words.split()
+    #words = ["one", "fish", "two", "fish", "red", "fish", "blue", "fish"]
     
     """ HISTOGRAM """
     histogram = analyzer.histogram(words)
@@ -80,8 +81,8 @@ if __name__ == "__main__":
     print("Unique words: " + str(unique_words))
 
     """ FREQUENCY """
-    word = "fish"
-    # word = "gangja"
+    #word = "fish"
+    word = "gangja"
     frequency = analyzer.frequency(word, histogram)
     frequency = str(frequency)
     print("Frequency of " + word + ": " + frequency)
