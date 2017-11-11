@@ -30,25 +30,26 @@ class Histogram:
         return words
 
 
-    def random_word(self):
+    def random_word(self, words = None):
         """ Get a random word """
-        words = self.words
+        if words is None:
+            words = self.words
 
         index = randrange(0, len(words))
         word = words[index]
         return word
 
 
-    def frequency(self):
+    def frequency(self, words = None):
         """ Find the frequency of each word in the corpus """
-        words = self.words
+        if words is None:
+            words = self.words
+        
         frequency = []
-
         for word in words:
             frequency.append(words.count(word))
 
         frequency = list(set(zip(words, frequency)))
-
         self.types = len(frequency) # Frequency only contains unique words
         
         if self.list_type == 1:
@@ -57,10 +58,12 @@ class Histogram:
         return frequency
 
 
-    def weighted_frequency(self):
+    def weighted_frequency(self, words = None, frequency = None):
         """ Find the weighted frequency of each word in the corpus """
-        words = self.words
-        frequency = self.frequency()
+        if words is None:
+            words = self.words
+        if frequency is None:
+            frequency = self.frequency()
 
         if type(frequency) is dict:
             frequency = frequency.items()
@@ -79,12 +82,10 @@ if __name__ == '__main__':
     import sys
     file_name = str(sys.argv[1])
 
-    if len(sys.argv) > 3:
+    if len(sys.argv) >= 3:
         output_type = int(sys.argv[2])
     else:
         output_type = 0
 
     histogram = Histogram(file_name, output_type) # 0 for list, 1 for dict
-    print(histogram.frequency())
-    print(histogram.weighted_frequency())
-
+        
