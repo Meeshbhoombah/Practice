@@ -58,12 +58,12 @@ class Histogram:
         return frequency
 
 
-    def weighted_frequency(self, words = None, frequency = None):
+    def weighted_frequency(self, words = None):
         """ Find the weighted frequency of each word in the corpus """
         if words is None:
             words = self.words
-        if frequency is None:
-            frequency = self.frequency()
+        if self.frequency() is None:
+            frequency = self.frequency(words)
 
         if type(frequency) is dict:
             frequency = frequency.items()
@@ -88,4 +88,4 @@ if __name__ == '__main__':
         output_type = 0
 
     histogram = Histogram(file_name, output_type) # 0 for list, 1 for dict
-        
+
