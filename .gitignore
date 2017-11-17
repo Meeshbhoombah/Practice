@@ -5,3 +5,5 @@
 # vim
 *.swp
 
+# python
+__pychache__/
