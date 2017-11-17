@@ -5,8 +5,10 @@ markov_chain.py
 This module creates a Markov Chain of given a text file.
 """
 import re
+from pprint import pprint
 
 class Markov:
+    # more comments dawg
     
     def __init__(self, file_name):
         self.words  = self.clean(file_name)
@@ -38,10 +40,11 @@ class Markov:
     def next_word_collection(self, key_word):
         """ A list of all words coming after a given word """
         words = self.words
-       
-        next_word_indexes = [i + 1 for i, x in enumerate(words) if x == key_word] # get indexes
+        # no x's 
+        next_word_indexes = [i + 1 for i, word in enumerate(words) if word == key_word] # get indexes
         next_word_indexes[:] = [i for i in next_word_indexes if i < len(words)] # remove indexes
         collection = [words[index] for index in next_word_indexes] 
+        pprint(collection)
 
         return collection
 
@@ -53,12 +56,13 @@ class Markov:
             frequency.append(words.count(word))
 
         frequency = list(set(zip(words, frequency)))
+        # make list comprehensions clearer
         frequency[:] = [(word, (word_frequency / len(words))) for word, word_frequency in frequency]
         frequency = dict(frequency)
 
         return frequency
 
 if __name__ == "__main__":
-    markov = Markov('ganja.txt')
-    print(markov.chain())
+    markov = Markov('suess.txt')
+    pprint(markov.chain())
 

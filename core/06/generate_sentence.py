@@ -24,7 +24,7 @@ class Process:
             self.add_word(sentence)
             counter += 1
 
-        return sentence
+        return ' '.join(sentence)
 
 
     def add_word(self, sentence):
@@ -46,5 +46,5 @@ class Process:
 
 if __name__ == "__main__":
     corpus = Process('ganja.txt')
-    print(corpus.create_sentence(10))
+    print(corpus.create_sentence(20))
 
