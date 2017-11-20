@@ -7,6 +7,7 @@ of Make School's Product College program.
     - [CORE 1]()
 - [CS]()
     - [CS1]()
+    - [CS2]()
 - [Web]()
     - [Web1]()
 - [Independent](#)
