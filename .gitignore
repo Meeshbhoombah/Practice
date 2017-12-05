@@ -1,5 +1,5 @@
+
 # Created by https://www.gitignore.io/api/macos,python
-*swp
 
 ### macOS ###
 *.DS_Store
