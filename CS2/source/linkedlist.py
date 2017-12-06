@@ -1,6 +1,5 @@
 #!python
 
-
 class Node(object):
 
     def __init__(self, data):
@@ -119,12 +118,12 @@ class LinkedList(object):
             raise ValueError('Item not found: {}'.format(item))
 
         while item is not curr_node.data:
-            # item not found
-            if curr_node.next is None:
-                raise ValueError('Item not found: {}'.format(item))
-
             prev_node = curr_node
             curr_node = curr_node.next
+        
+            # item not found
+            if curr_node is None:
+                raise ValueError('Item not found: {}'.format(item))
 
         # Update previous node to skip around node with matching data
         if curr_node is not self.head and curr_node is not self.tail:
@@ -138,7 +137,6 @@ class LinkedList(object):
 
             if prev_node:
                 prev_node.next = None
-
 
 def test_linked_list():
     ll = LinkedList()
@@ -166,7 +164,6 @@ def test_linked_list():
         print('head: {}'.format(ll.head))
         print('tail: {}'.format(ll.tail))
         print('length: {}'.format(ll.length()))
-
 
 if __name__ == '__main__':
     test_linked_list()
