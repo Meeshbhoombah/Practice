@@ -2,38 +2,26 @@
 Rohan Mishra
 
 ## Overview
-This course is designed to give me the skills I need to implement my own dApp on Ethereum using
-[Geth](), [Solidity](), and [Go]().
+This course is designed to give me the skills I need to implement my own dApp on Ethereum 
+using [Geth](), [Solidity](), and [Go]().
 
-By the end of the course I will have a strong grasp of Go and Solidity, as well as
-a concrete understanding of what blockchains are, their optimal use case. I will also have a 
-deep understanding of how Ethereum works and the many-facitied concepts that comprise the
-Ethereum blockchain.
+Upon completion of this course of the course I will have a strong grasp of Go and Solidity, 
+as well as a concrete understanding of what blockchains are, their optimal use case. I will 
+also have a deep understanding of both how Ethereum works and the concepts that comprise 
+the Ethereum blockchain.
 
 ## Competencies
 By the end of this study, I will be able to:
-- Understand what sets Go apart from other languages
-- Implement arrays, linked-lists, stacks, queues, and hash tables in Go
-- Utilize Go's inbuilt testing framework to test programs
-- Demonstrate a strong understanding of concurrency and error-handing
-- Build RESTful APIs and web apps in Go
-- Interact with popular Javascript libraries in Go
-- Understand the various developments in blockchain technology:
-    + Cryptocurrencies
-    + Smart contracts
-    + Economics and markets
-    + Science
-    + Genomics
-    + Health
-- Synthesize an understanding of the limitations of the Blockchain technology
-- Implement my own fork of the Etherum blockchain using `Geth`
-- Build a very basic blockchain from scratch to serve as a database
+- Implement web apps/APIs in Go
+- Demonstate what sets Go apart from other languages
+- Maximize leverage of the Go toolkit and Standard Lib 
+- 
 
 ## Resources
-- Learning Go
+- Go
     + [The Offical Google Wiki for Learning Go](https://github.com/golang/go/wiki/Learn)
-    + [Go in Action]()
-    + [Go Web Programming]()
+    + [Go in Action](https://www.manning.com/books/go-in-action)
+    + [Go Web Programming](https://www.manning.com/books/go-web-programming)
 - Blockchain
     + Books:
         * The Business Blockchain
@@ -46,7 +34,7 @@ By the end of this study, I will be able to:
         * [Building dApps 1:3 dev tools](https://www.slideshare.net/MartinKppelmann/build-dapps-13-dev-tools)
 
 ## Projects
-- Mixer - SMS bot for finding out if any combination of drugs is safe 
+- **Mixer** - SMS bot for finding out if any combination of drugs is safe 
     + Done:
         - User can prompt the bot with a combination of drugs (asked in any form)        
         - User can learn whether or not a combination of drugs is safe
@@ -59,7 +47,7 @@ By the end of this study, I will be able to:
         - [How to Develop a Chatbot](https://chatbotsmagazine.com/how-to-develop-a-chatbot-from-scratch-62bed1adab8c)
         - [Send Text Messages with Golang by Twilio](https://www.twilio.com/blog/2017/09/send-text-messages-golang.html)
         - [Wit.ai](https://wit.ai/)
-- Tic-Tac-Toe - Tic-Tac-Toe on the Ethereum blockchain
+- **Tic-Tac-Toe** - Tic-Tac-Toe on the Ethereum blockchain
     + Done:
         - User can create an account that tie's their username to their phone number
         - User can create a match with another user via username or phone number
@@ -72,9 +60,9 @@ By the end of this study, I will be able to:
             + If one player forfeits the other player wins the pot
             + A timed playing period
     + Resources:
-        - [@dennismckinnon's Tic-tac-toe](https://github.com/dennismckinnon/Ethereum-TicTacToe)
-        - [@SilentCicero's Tic-tac-toe](https://github.com/SilentCicero/Ethereum/tree/master/TicTacToe)
-- Lance - an arbitator for Freelancers and their clients
+        - [@dennismckinnon's Tic-Tac-Toe](https://github.com/dennismckinnon/Ethereum-TicTacToe)
+        - [@SilentCicero's Tic-Tac-Toe](https://github.com/SilentCicero/Ethereum/tree/master/TicTacToe)
+- **Lance** - an arbitator for Freelancers and their clients
     + Done:
         - User can create an invoice with/without absorbed service fee
         - User can choose start/end/check-in dates for a project
