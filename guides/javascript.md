@@ -1,5 +1,9 @@
 # Javascript
-1. **The Basics**
-- [ ] Complete [FreeCodeCamp's Basic Javascript Course](https://www.freecodecamp.org/map-aside#nested-collapseBasicJavaScript)
-- [ ] Test
+Learning Javascript through resources I found online.
 
+## The Basics
+- [ ] Complete [FreeCodeCamp's Basic Javascript Course](https://www.freecodecamp.org/map-aside#nested-collapseBasicJavaScript)
+- [ ] 
+
+## Resources
+- [http://wesbos.com/courses/](http://wesbos.com/courses/)
