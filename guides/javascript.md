@@ -2,17 +2,24 @@
 Learning Javascript through resources I found online. I practice on Hackerrank and [Codewars](https://www.codewars.com/users/Meeshbhoombah).
 
 ## The Basics
-- [ ] Complete [FreeCodeCamp's Basic Javascript Course](https://www.freecodecamp.org/map-aside#nested-collapseBasicJavaScript)
-- [ ] Complete Eloquent Javascript
-- [ ] Complete JS: The Good Parts
+- [ ] [FreeCodeCamp's Basic Javascript Course](https://www.freecodecamp.org/map-aside#nested-collapseBasicJavaScript)
+- [ ] Eloquent Javascript
     
-**Targeting Specefic Topics**
+### Second Pass
+- [ ] FreeCodeCamp's Algorithmic Scripting
+- [ ] Effective Javascript
+- [ ] JS: The Good Parts
 - [ ] [You-Dont-Know-JS](https://github.com/getify/You-Dont-Know-JS)
+- [ ] Programming Javascript
 
 ## Functional Programming
+- [ ] [FreeCodeCamp's Functional Programming Course](https://www.freecodecamp.org/map-aside#nested-collapseObjectOrientedandFunctionalProgramming)
+
+## Second Pass
+- [ ] Functional Javascript
 
 ## React
-
+- https://www.lullabot.com/articles/how-to-learn-react
 ## Redux
 
 ## Resources
