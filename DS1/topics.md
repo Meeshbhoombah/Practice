@@ -1,12 +1,3 @@
-DS1: Data Analysis, Databases, and Data Visualization
-
-**_This repo is still under construction.  Things will be added and changed as the course progresses--check back often!_**
-
-## Getting started
-
-To make sure that you are prepared for the course, please follow the instructions found in the [Installation_Instructions.md](Installation_Instructions.md)
-
-## Topics
 *Descriptive statistics*
 -Mean
 -Median
@@ -56,5 +47,4 @@ To make sure that you are prepared for the course, please follow the instruction
 - Goodheart’s Law
 - Data Science Process
 - Watched Alan make fun of Mike 50 separate times
-- Helped Mike convince Alan he isn’t feeling oka`
-
+- Helped Mike convince Alan he isn’t feeling oka

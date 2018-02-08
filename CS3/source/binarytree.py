@@ -187,12 +187,12 @@ class BinarySearchTree(object):
         TODO: Memory usage: ??? Why and under what conditions?"""
         # Traverse left subtree, if it exists
         if node.left:
-            self._traverse_in_order_iterative(node.left, visit)
+            self._traverse_in_order_recursive(node.left, visit)
         # Visit this node's data with given function
         visit(node.data)
         # raverse right subtree, if it exists
         if node.right:
-            self._traverse_in_order_iterative(node.right, visit)
+            self._traverse_in_order_recursive(node.right, visit)
 
     def _traverse_in_order_iterative(self, node, visit):
         """Traverse this binary tree with iterative in-order traversal (DFS).
