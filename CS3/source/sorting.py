@@ -2,29 +2,67 @@
 
 
 def is_sorted(items):
-    """Return a boolean indicating whether given items are in sorted order.
-    TODO: Running time: ??? Why and under what conditions?
-    TODO: Memory usage: ??? Why and under what conditions?"""
-    # TODO: Check that all adjacent items are in order, return early if not
+    """ Return a boolean indicating whether given items are in ascending order
 
+    Checks if items contains any values. If it does, returns False, or not sorted, when
+    a greater value appears before a lesser value.
 
+    Args:
+        - items (list): a list of unsorted items
+
+    Returns:
+        - sorted_check (boolean): returns true if the items are in ascending order,
+          false if otherwise
+    """
+    if items:
+        for i in range(0, len(items)):
+            try:
+                # not sorted if a greater values appears 
+                # prior to a smaller (out of order)
+                if items[i] > items[i + 1]:
+                    return False
+
+            except IndexError:
+                # items list bound reached with no item
+                # out of order
+                return True
+    else:
+        # empty list sorted vacuously
+        return True 
+
+            
 def bubble_sort(items):
-    """Sort given items by swapping adjacent items that are out of order, and
-    repeating until all items are in sorted order.
-    TODO: Running time: ??? Why and under what conditions?
-    TODO: Memory usage: ??? Why and under what conditions?"""
-    # TODO: Repeat until all items are in sorted order
-    # TODO: Swap adjacent items that are out of order
+    """ Sort items by swapping adjacent pairs of items that are in the wrong order.
+
+    Passes through list until no swaps are needed, in which case the list is sorted. The
+    inner loop can ignore the last value beacuse the n-th pass finds the n-th largest value
+    and puts it in its final place.
+    
+    + Runtime Time:
+      Worst case: O(n^2)
+      Avg case: O(n^2) 
+      
+    + Memory:
+      O(1) - no need to allocate memory for any of the items
+
+    Args:
+        - items (list): a list of unsorted items
+    
+    Returns:
+        - sorted_items (list): the passed list, sorted
+    """
+    # can ignore looking at the last value each time
+    for delimiter in range(len(items) - 1, 0, -1):
+        for i in range(delimiter):
+            # greater value appears before smaller value
+            if items[i] > items[i + 1]:
+                # swap
+                items[i], items[i + 1] = items[i + 1], items[i]
 
 
 def selection_sort(items):
-    """Sort given items by finding minimum item, swapping it with first
-    unsorted item, and repeating until all items are in sorted order.
-    TODO: Running time: ??? Why and under what conditions?
-    TODO: Memory usage: ??? Why and under what conditions?"""
-    # TODO: Repeat until all items are in sorted order
-    # TODO: Find minimum item in unsorted items
-    # TODO: Swap it with first unsorted item
+    """
+    """
 
 
 def insertion_sort(items):
