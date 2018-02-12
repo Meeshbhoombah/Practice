@@ -54,6 +54,7 @@ def bubble_sort(items):
     # can ignore looking at the last value each time
     for delimiter in range(len(items) - 1, 0, -1):
         for i in range(delimiter):
+            print(items)
             # greater value appears before smaller value
             if items[i] > items[i + 1]:
                 # swap
@@ -62,17 +63,25 @@ def bubble_sort(items):
 
 def selection_sort(items):
     """
+    got heem
     """
+    return "Got heem"
 
 
 def insertion_sort(items):
-    """Sort given items by taking first unsorted item, inserting it in sorted
-    order in front of items, and repeating until all items are in order.
-    TODO: Running time: ??? Why and under what conditions?
-    TODO: Memory usage: ??? Why and under what conditions?"""
-    # TODO: Repeat until all items are in sorted order
-    # TODO: Take first unsorted item
-    # TODO: Insert it in sorted order in front of items
+    """
+    re:factoring
+    """
+    for i in range(1, len(items)):
+
+        current_value = items[i]
+        current_pos = i
+
+        while current_pos > 0 and items[current_pos - 1] > current_value:
+            items[current_pos] = items[current_pos - 1]
+            current_pos = current_pos - 1
+
+        items[current_pos] = current_value
 
 
 def merge(items1, items2):
@@ -97,16 +106,47 @@ def split_sort_merge(items):
 
 
 def merge_sort(items):
-    """Sort given items by splitting list into two approximately equal halves,
-    sorting each recursively, and merging results into a list in sorted order.
-    TODO: Running time: ??? Why and under what conditions?
-    TODO: Memory usage: ??? Why and under what conditions?"""
-    # TODO: Check if list is so small it's already sorted (base case)
-    # TODO: Split items list into approximately equal halves
-    # TODO: Sort each half by recursively calling merge sort
-    # TODO: Merge sorted halves into one list in sorted order
+    """ Sort a list in place by rescursively splitting lists into sublists then merging them
 
+    Divides the unsorted list into N lists (where N = number of items in the collection),
+    each of which contain one element, which is considered sorted. Then merges those
+    sublists.
+    """
+    # lists w/ a one element are sorted
+    if len(items) > 1:
 
+        split_index =  len(items) // 2
+
+        left = items[:split_index]
+        right =  items[split_index:]
+
+        merge_sort(left)
+        merge_sort(right)
+
+        i, j, k = 0, 0, 0
+        
+        while i < len(left) and j < len(right):
+
+            if left[i] < right[j]:
+                items[k] = left[i]
+                i += 1
+            else:
+                items[k] = right[j]
+                j += 1
+
+            k += 1
+
+        while i < len(left):
+            items[k] = left[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            items[k] = right[j]
+            j += 1
+            k += 1
+        
+    
 def random_ints(count=20, min=1, max=50):
     """Return a list of `count` integers sampled uniformly at random from
     given range [`min`...`max`] with replacement (duplicates are allowed)."""
