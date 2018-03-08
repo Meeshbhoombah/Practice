@@ -1,5 +1,6 @@
 #!python
 
+from binarytree import BinarySearchTree
 
 def is_sorted(items):
     """ Return a boolean indicating whether given items are in ascending order
@@ -106,47 +107,105 @@ def split_sort_merge(items):
 
 
 def merge_sort(items):
-    """ Sort a list in place by rescursively splitting lists into sublists then merging them
+    """ Sorts a list in place, rescursively, splitting lists into sublists then merging them
 
     Divides the unsorted list into N lists (where N = number of items in the collection),
     each of which contain one element, which is considered sorted. Then merges those
     sublists.
+
+    Args:
+        - items (list): a collection of items, sored or unsorted
+
+    Returns:
+        - None (None): sorts collection in place
     """
-    # lists w/ a one element are sorted
+    # lists with one element are sorted and should trigger the merge sequence
     if len(items) > 1:
+        """
+        Split
+        """
 
         split_index =  len(items) // 2
 
         left = items[:split_index]
         right =  items[split_index:]
 
+        # rescursively call merge_sort on the two halves
         merge_sort(left)
         merge_sort(right)
 
+        """
+        Merge
+        """
+
+        # i and j serve as counters for left and right respectively (avoid IndexErrors)
+        # k is the index at which an item should be inserted after comparisons are made
         i, j, k = 0, 0, 0
-        
+
+        # both left and right have not been completly iterated through
         while i < len(left) and j < len(right):
 
+            # determine the greater value and insert into the array
+            # then increment the counter from which the item was removed
+            # and recompare
             if left[i] < right[j]:
                 items[k] = left[i]
                 i += 1
             else:
                 items[k] = right[j]
                 j += 1
-
+        
             k += 1
 
+        # completely iterated through right but items remain in left
         while i < len(left):
             items[k] = left[i]
             i += 1
             k += 1
 
+        ## completely iterated through items but items remain in right
         while j < len(right):
             items[k] = right[j]
             j += 1
             k += 1
-        
+
+def tree_sort(items):
+    """ Uses a binary serach tree to sort a list of items
+    """
+    sorted_items = BinarySearchTree(items)
+    items[:] = sorted_items.items_in_order()
+
+
+
+
+
+def quick_sort(items, pivot_index = 0, pivot_right = 1):
+    """ Refactoring """
+
+    items = items[:]
     
+    if not is_sorted(items):
+
+        print(items)
+
+        pivot_index = 0
+        pivot_right = pivot_index + 1
+
+        # subtract one for index
+        for index in range(pivot_index, len(items) - 1):
+
+            if items[index] < items[pivot_index]:
+
+                index, pivot_right = pivot_right, index
+
+                pivot_right += 1
+            
+            pivot_index, pivot_right = pivot_right, pivot_index
+
+            print(items)
+
+        quick_sort(items, pivot_index, pivot_right)
+
 def random_ints(count=20, min=1, max=50):
     """Return a list of `count` integers sampled uniformly at random from
     given range [`min`...`max`] with replacement (duplicates are allowed)."""
