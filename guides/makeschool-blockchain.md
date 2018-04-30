@@ -15,7 +15,6 @@ By the end of this study, I will be able to:
 - Implement web apps/APIs in Go
 - Demonstate what sets Go apart from other languages
 - Maximize leverage of the Go toolkit and Standard Lib 
-- 
 
 ## Resources
 - Go
